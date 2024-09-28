@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoekos</title>
+  <link rel="stylesheet" href="./assets/css/estilos.css">
+  <link rel="stylesheet" href="./assets/css/css_bootstrap/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- INICIO NAVBAR-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><i><b>Shoekos</b></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contactenos.html">Contáctenos</a>
+        </li>
+        <li class="nav-item">
+          <a id="cart-link" class="nav-link disabled" href="./compras.html">Carrito de Compras</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- FIN NAVBAR-->
+
+<h1>Sneaker's Edición <i>LIMITADA</i></h1>
+<p class="intro-text">
+  En Calzado Ilimitado, nuestro compromiso es brindarte no solo la mejor calidad, sino también un estilo que se adapte a
+  ti. Nos apasiona ofrecerte una experiencia de compra única, con una amplia variedad de modelos que se ajustan a tus
+  necesidades y gustos. Ya sea que busques comodidad, elegancia o rendimiento, estamos aquí para acompañarte en cada
+  paso de tu camino. ¡Gracias por elegirnos y confiar en nosotros para caminar con estilo!
+</p>
+<hr>
+
+<!-- Contenedor para las cartas -->
+<div class="card-container">
+  <!-- INICIO CARD 1-->
+  <div class="card">
+    <img src="./assets/img/img1.jpg" class="card-img-top" alt="Nike Dunk High">
+    <div class="card-body">
+      <h6 class="card-title">Nike Dunk High <i>"Wu Tang."</i></h6>
+      <ul>
+        <li><b>Talla: </b>US 7.5</li>
+        <li><b>Tipo: </b>Basquetbol</li>
+        <li><b>Modelo: </b>Dunk</li>
+        <li><b>Materiales: </b>Cuero, Caucho, Algodón Sintético</li>
+        <li><b>Año: </b>1999</li>
+      </ul>
+      <p class="card-text">
+      <h3>27.500 USD.</h3>
+      </p>
+      <a class="btn btn-primary add-to-cart" data-product="Nike Dunk High" data-price="27500">Añadir al Carrito</a>
+    </div>
+  </div>
+  <!-- FIN CARD 1-->
+
+  <!-- INICIO CARD 2-->
+  <div class="card">
+    <img src="./assets/img/img2.jpg" class="card-img-top" alt="Louis Vuitton x Nike">
+    <div class="card-body">
+      <h6 class="card-title">Louis Vuitton x Nike <i>"Classic"</i></h6>
+      <ul>
+        <li><b>Talla: </b>US 9</li>
+        <li><b>Tipo: </b>Deportivo</li>
+        <li><b>Modelo: </b>LV x Nike</li>
+        <li><b>Año: </b>2022</li>
+      </ul>
+      <p class="card-text">
+      <h3>17.800 USD.</h3>
+      </p>
+      <a class="btn btn-primary add-to-cart" data-product="Louis Vuitton x Nike" data-price="17800">Añadir al Carrito</a>
+    </div>
+  </div>
+  <!-- FIN CARD 2-->
+
+  <!-- INICIO CARD 3-->
+  <div class="card">
+    <img src="./assets/img/img3.jpg" class="card-img-top" alt="Adidas Superstar">
+    <div class="card-body">
+      <h6 class="card-title">Adidas Superstar <i>"Vintage"</i></h6>
+      <ul>
+        <li><b>Talla: </b>US 8</li>
+        <li><b>Tipo: </b>Casual</li>
+        <li><b>Modelo: </b>Superstar</li>
+        <li><b>Año: </b>1980</li>
+      </ul>
+      <p class="card-text">
+      <h3>12.000 USD.</h3>
+      </p>
+      <a class="btn btn-primary add-to-cart" data-product="Adidas Superstar" data-price="12000">Añadir al Carrito</a>
+    </div>
+  </div>
+  <!-- FIN CARD 3-->
+</div>
+
+  <!-- INICIO CARD 4-->
+  <div class="card">
+    <img src="./assets/img/img4.jpg" class="card-img-top" alt="Puma RS-X">
+    <div class="card-body">
+      <h6 class="card-title">Puma RS-X <i>"Modern"</i></h6>
+      <ul>
+        <li><b>Talla: </b>US 10</li>
+        <li><b>Tipo: </b>Deportivo</li>
+        <li><b>Modelo: </b>RS-X</li>
+        <li><b>Año: </b>2020</li>
+      </ul>
+      <p class="card-text">
+      <h3>22.000 USD.</h3>
+      </p>
+      <a class="btn btn-primary" onclick="toggleCartItem(this, 'Puma RS-X Modern', 22000)">Añadir al Carrito</a>
+      
+    </div>
+  </div>
+  <!-- FIN CARD 4-->
+
+  <!-- INICIO CARD 5-->
+  <div class="card">
+    <img src="./assets/img/img5.jpg" class="card-img-top" alt="New Balance 990">
+    <div class="card-body">
+      <h6 class="card-title">New Balance 990 <i>"Classic"</i></h6>
+      <ul>
+        <li><b>Talla: </b>US 11</li>
+        <li><b>Tipo: </b>Running</li>
+        <li><b>Modelo: </b>990</li>
+        <li><b>Año: </b>2015</li>
+      </ul>
+      <p class="card-text">
+      <h3>19.000 USD.</h3>
+      </p>
+      <a class="btn btn-primary" onclick="toggleCartItem(this, 'New Balance 990 Classic', 19000)">Añadir al Carrito</a>
+      <script src="./assets/js/script.js"></script>
+    </div>
+  </div>
+  <!-- FIN CARD 5-->
+
+  <!-- INICIO CARD 6-->
+  <div class="card">
+    <img src="./assets/img/img6.jpg" class="card-img-top" alt="Vans Old Skool">
+    <div class="card-body">
+      <h6 class="card-title">Vans Old Skool <i>"Retro"</i></h6>
+      <ul>
+        <li><b>Talla: </b>US 7</li>
+        <li><b>Tipo: </b>Casual</li>
+        <li><b>Modelo: </b>Old Skool</li>
+        <li><b>Año: </b>1996</li>
+      </ul>
+      <p class="card-text">
+      <h3>10.000 USD.</h3>
+      </p>
+      <a class="btn btn-primary" onclick="toggleCartItem(this, 'Vans Old Skool Retro', 10000)">Añadir al Carrito</a>
+      <script src="./assets/js/script.js"></script>
+    </div>
+  </div>
+  <!-- FIN CARD 6-->
+<script>
+    // Función para agregar al carrito con jQuery
+    function toggleCartItem(button, product, price) {
+        // Aquí puedes manipular lo que ocurre al hacer clic en "Añadir al carrito"
+        alert(`Producto añadido: ${product} por ${price} USD`);
+    }
+
+    // Usar jQuery para capturar el evento click en las cartas del carrito
+    $(document).ready(function() {
+        $('.add-to-cart').click(function() {
+            let product = $(this).data('product');
+            let price = $(this).data('price');
+            toggleCartItem(this, product, price);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos - Shoekos</title>
+    <link rel="stylesheet" href="./assets/css/contactenos.css">
+    <link rel="stylesheet" href="./assets/css/css_bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- INICIO NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i><b>Shoekos</b></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Contáctenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Carrito de Compras</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN NAVBAR-->
+
+    <div class="container">
+        <h1>Contáctenos</h1>
+        <p>Si tiene alguna pregunta o comentario, no dude en ponerse en contacto con nosotros. Estaremos encantados de
+            ayudarle.</p>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <div class="contact-form">
+            <form id="contact-form">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- jQuery script -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script>
+                // Manejador del evento submit usando jQuery
+                $('#contact-form').on('submit', function (event) {
+                    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+                    const nombre = $('input[name="nombre"]').val(); // Obtener el valor del campo nombre
+                    alert('Formulario enviado. Gracias por contactarnos, ' + nombre + '.'); // Mostrar mensaje de éxito
+                });
+            </script>
+        </div>
+
+        <!-- ÍCONOS DE REDES SOCIALES -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/snkrs_bta2" target="_blank" class="instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/xzPwStrZW8EQKkMr/?mibextid=qi2Omg" target="_blank" class="facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://api.whatsapp.com/message/VLTPIGGSXIZGB1?autoload=1&app_absent=0" target="_blank" class="whatsapp" title="Contactar por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts de Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+
+</html>

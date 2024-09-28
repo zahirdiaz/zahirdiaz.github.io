@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Shoekos</title>
+    <link rel="stylesheet" href="./assets/css/compras.css">
+    <link rel="stylesheet" href="./assets/css/css_bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- INICIO NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i><b>Shoekos</b></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactenos.html">Contáctenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Carrito de Compras</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN NAVBAR-->
+
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+        <p>Estos son los productos que has añadido a tu carrito:</p>
+
+        <!-- TABLA DEL CARRITO -->
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                
+            </tbody>
+        </table>
+
+        <script>function renderCart() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                const totalPriceElement = document.getElementById('total-price');
+                cartItemsContainer.innerHTML = '';
+                let totalPrice = 0;
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<tr><td colspan="2">El carrito está vacío</td></tr>';
+                    totalPriceElement.textContent = '0';
+                    return;
+                }
+
+                cart.forEach(item => {
+                    const row = document.createElement('tr');
+                    const nameCell = document.createElement('td');
+                    const priceCell = document.createElement('td');
+
+                    nameCell.textContent = item.name;
+                    priceCell.textContent = item.price.toFixed(2) + ' USD';
+
+                    row.appendChild(nameCell);
+                    row.appendChild(priceCell);
+                    cartItemsContainer.appendChild(row);
+
+                    totalPrice += item.price;
+                });
+
+                totalPriceElement.textContent = totalPrice.toFixed(2);
+            }
+</script>
+        <div class="total">
+            Total a pagar: <span id="total-price">0</span> USD
+        </div>
+
+        <button class="checkout-button" onclick="checkout()">Proceder al Pago</button>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            cartItemsContainer.innerHTML = '';
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                const nameCell = document.createElement('td');
+                const priceCell = document.createElement('td');
+
+                nameCell.textContent = item.name;
+                priceCell.textContent = item.price.toFixed(2) + ' USD';
+
+                row.appendChild(nameCell);
+                row.appendChild(priceCell);
+                cartItemsContainer.appendChild(row);
+
+                totalPrice += item.price;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        }
+
+        function checkout() {
+            alert('Procediendo al pago. Total a pagar: ' + document.getElementById('total-price').textContent + ' USD');
+            // Lógica para proceder al pago
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+
+</html>
